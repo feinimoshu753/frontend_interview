@@ -66,3 +66,29 @@ function promiseAny(arr) {
         });
     });
 }
+
+function promiseAllSettle(arr) {
+    const result=[];
+    let index=0;
+    if (!Array.isArray(arr)) {
+        throw new Error(`${arr} is not a Array`);
+    }
+    return new Promise((resolve, reject) => {
+        arr.forEach(item => {
+            const p = item instanceof Promise ? item : Promise.resolve(item);
+            p.then((val, i) => {
+                index++;
+                result[i] = { status: 'fulfilled', value: val }
+                if (index === arr.length) {
+                    resolve(result);
+                }
+            }, (e) => {
+                index++;
+                result[i] = { status: 'rejected', reason: e }
+                if (index === arr.length) {
+                    resolve(result);
+                }
+            });
+        });
+    });
+}
