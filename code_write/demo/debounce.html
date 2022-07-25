@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+    <head>
+        <title>debounce</title>
+        <style>
+            div {
+                height: 50px;
+                border-bottom: 1px solid #00ff00;
+            }
+        </style>
+    </head>
+    <body>
+        debounce
+        <div>111</div>
+        <div>111</div>
+        <div>111</div>
+        <div>111</div>
+        <div>111</div>
+        <div>111</div>
+        <div>111</div>
+        <div>111</div>
+        <div>111</div>
+        <div>111</div>
+        <div>111</div>
+        <div>111</div>
+        <div>111</div>
+        <div>111</div>
+        <div>111</div>
+        <div>111</div>
+        <div>111</div>
+        <div>111</div>
+        <div>111</div>
+        <div>111</div>
+        <div>111</div>
+        <script src="../code/debounce.js"></script>
+        <script>
+            const fn = window.debounce(() => {
+                console.log('time:', Date.now());
+            }, 200);
+            window.addEventListener('scroll', fn);
+        </script>
+    </body>
+</html>
