@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+    <head>
+        <title>throttle</title>
+        <style>
+            div {
+                height: 50px;
+                border-bottom: 1px solid #ff0000;
+            }
+        </style>
+    </head>
+    <body>
+        throttle
+        <div>111</div>
+        <div>111</div>
+        <div>111</div>
+        <div>111</div>
+        <div>111</div>
+        <div>111</div>
+        <div>111</div>
+        <div>111</div>
+        <div>111</div>
+        <div>111</div>
+        <div>111</div>
+        <div>111</div>
+        <div>111</div>
+        <div>111</div>
+        <div>111</div>
+        <div>111</div>
+        <div>111</div>
+        <div>111</div>
+        <div>111</div>
+        <div>111</div>
+        <div>111</div>
+        <script src="../code/throttle.js"></script>
+        <script>
+            const fn = window.throttle(() => {
+                console.log('time:', Date.now());
+            }, 200);
+            window.addEventListener('scroll', fn);
+        </script>
+    </body>
+</html>
